@@ -25,12 +25,12 @@ app.post('/sendMail', (req,res) => {
     var body = '<table><tr><th>Item Name</th><th>Description</th><th>Quantity</th><th>Price</th><th>Total</th></tr>';
     var subtotal = 0;
     req.body.forEach(item => {
-        body = body.concat('<tr>')
-       body = body.concat('<td>', item.name, '</td>')
-       body = body.concat('<td>', item.description, '</td>')
-       body = body.concat('<td>', item.quantity, '</td>')
-       body = body.concat('<td> $', item.price, '</td>')
-       body = body.concat('<td> $', item.quantity * item.price, '</td>')
+        body = body.concat('<tr')
+       body = body.concat('<td style="text-align: center">', item.name, '</td>')
+       body = body.concat('<td style="text-align: center">', item.description, '</td>')
+       body = body.concat('<td style="text-align: center">', item.quantity, '</td>')
+       body = body.concat('<td style="text-align: center"> $', item.price, '</td>')
+       body = body.concat('<td style="text-align: center"> $', item.quantity * item.price, '</td>')
        body = body.concat('</tr>')
        subtotal += item.price * item.quantity
     });
